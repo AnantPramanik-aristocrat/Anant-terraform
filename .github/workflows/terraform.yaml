@@ -28,5 +28,5 @@ jobs:
       run: |
         pwd
         ls -a
-        cd ec2
+        cd ../../../ec2
         terraform init
