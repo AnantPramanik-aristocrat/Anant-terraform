@@ -25,4 +25,6 @@ jobs:
         ls -al
     
     - name: terraform init
-      run: cd ec2 & terraform init
+      run: |
+        cd ec2
+        terraform init
