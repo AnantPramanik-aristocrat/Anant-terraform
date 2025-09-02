@@ -26,5 +26,6 @@ jobs:
     
     - name: terraform init
       run: |
+        pwd
         cd ec2
         terraform init
