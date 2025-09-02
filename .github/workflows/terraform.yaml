@@ -18,3 +18,11 @@ jobs:
 
     - name: verify terraform installation 
       run: terraform version 
+    
+    - name: checking data
+      run: |
+        echo "Hello ${{ secrets.AWS_ACCESS_KEY}}"
+        ls -al
+    
+    - name: terraform init
+      run: cd ec2 & terraform init
