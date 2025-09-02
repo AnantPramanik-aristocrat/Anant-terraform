@@ -28,5 +28,6 @@ jobs:
       run: |
         pwd
         ls -a
-        cd ../../../ec2
+        cd ../../../
+        ls -a 
         terraform init
