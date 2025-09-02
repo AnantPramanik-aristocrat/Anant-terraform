@@ -28,6 +28,6 @@ jobs:
       run: |
         pwd
         ls -a
-        cd ../../../work
+        cd ../../../work/Anant-terraform
         ls -a 
         terraform init
