@@ -74,6 +74,6 @@ resource "aws_instance" "example" {
     Name = "${var.aws-instance-name}-${count.index}"
   }
   key_name = aws_key_pair.example.key_name
-  depends_on = [ aws_key_pair.example,aws_security_group.allow_tls ]
+  depends_on = [ aws_key_pair.example,aws_security_group.anant_sg_tls ]
 }
 
