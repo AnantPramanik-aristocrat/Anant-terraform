@@ -1,3 +1,4 @@
-data "aws_vpc" "example" {
-  id = var.vpc_exitingID
+output "public_IP" {
+  value = aws_instance.example.*.public_ip
+
 }
