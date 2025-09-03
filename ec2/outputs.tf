@@ -3,7 +3,14 @@ output "public_IP" {
 
 }
 
-resource "local_file" "Inventory" {
-   content  = jsonencode(aws_instance.example.*.public_ip)
-   filename = "${path.module}/../Ansible/Inventory"
+# creating ansible inventory like file 
+resource "null_resource" "stop_ipaddress" {
+  depends_on = [ aws_instance.example ]
+  provisioner "local-exec" {
+    command = <<EOT
+      echo "[hello]" > "${path.module}/../Ansible/Inventory"
+      echo "${join("\n",aws_instance.example[*].public_ip)}" >> "${path.module}/../Ansible/Inventory"
+      EOT   
+  }
+  
 }
