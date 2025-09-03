@@ -65,3 +65,12 @@ jobs:
         cd ./ec2
         ls -a
         terraform destroy -auto-approve
+
+  infra-ConfigDeploy:
+    runs-on: ubuntu-latest 
+    steps: # what exactly you want to run in ubuntu machine 
+    - name: installing ansible
+      uses: ansible/ansible@v2.9.27
+
+    - name: verify ansible installation
+      run: ansible --version
