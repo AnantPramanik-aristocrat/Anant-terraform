@@ -14,3 +14,4 @@ resource "null_resource" "stop_ipaddress" {
   }
   
 }
+
