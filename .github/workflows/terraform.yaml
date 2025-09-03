@@ -62,13 +62,13 @@ jobs:
         ls -a 
         cat Inventory
 
-    - name: terraform destroy
-      run: |
-        pwd
-        ls -a
-        cd ./ec2
-        ls -a
-        terraform destroy -auto-approve
+    # - name: terraform destroy
+    #   run: |
+    #     pwd
+    #     ls -a
+    #     cd ./ec2
+    #     ls -a
+    #     terraform destroy -auto-approve
 
     - name: uploading inventory or any other data to github artifact  
       uses: actions/upload-artifact@v4
