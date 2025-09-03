@@ -5,5 +5,5 @@ output "public_IP" {
 
 resource "local_file" "Inventory" {
    content  = jsonencode(aws_instance.example.*.public_ip)
-   filename = "${path.module}/../Ansible/Inventory.txt"
+   filename = "${path.module}/../Ansible/Inventory"
 }
