@@ -57,3 +57,11 @@ jobs:
         cd ./ec2
         ls -a
         terraform apply -auto-approve
+
+    - name: terraform destroy
+      run: |
+        pwd
+        ls -a
+        cd ./ec2
+        ls -a
+        terraform destroy -auto-approve
