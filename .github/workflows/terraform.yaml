@@ -81,3 +81,12 @@ jobs:
 
     - name: verify ansible installation
       run: ansible --version
+
+    - name: verify inventory file 
+      run: |
+        pwd
+        ls -a
+        cd ./Ansible
+        pwd 
+        ls -a 
+        cat Inventory
