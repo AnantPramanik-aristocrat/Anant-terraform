@@ -70,6 +70,12 @@ jobs:
         ls -a
         terraform destroy -auto-approve
 
+    - name: uploading inventory or any other data to github artifact  
+      uses: actions/upload-artifact@v4
+      with:
+        name: ansible-artifact
+        path: Ansible/Inventory
+
   infra-ConfigDeploy:
     runs-on: ubuntu-latest 
     needs: infra-build
@@ -82,11 +88,15 @@ jobs:
     - name: verify ansible installation
       run: ansible --version
 
-    - name: verify inventory file 
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: download artifact 
+      uses: actions/download-artifact@v5
+      with:
+        name: ansible-artifact
+
+    - name: verify inventory file
       run: |
         pwd
-        ls -a
-        cd ./Ansible
-        pwd 
-        ls -a 
         cat Inventory
