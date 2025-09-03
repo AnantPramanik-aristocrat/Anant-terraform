@@ -109,4 +109,5 @@ jobs:
       run: |
         cd Ansible
         pwd
+        cat Inventory
         ansible hello -m ping
