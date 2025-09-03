@@ -34,3 +34,19 @@ jobs:
         cd ./ec2
         ls -a 
         terraform init
+
+    - name: terraform plan
+      run: |
+        pwd
+        ls -a
+        cd ./ec2
+        ls -a 
+        terraform plan
+
+    - name: terraform apply
+      run: |
+        pwd
+        ls -a
+        cd ./ec2
+        ls -a
+        terraform apply -auto-approve
