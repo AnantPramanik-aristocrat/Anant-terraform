@@ -100,3 +100,6 @@ jobs:
       run: |
         pwd
         cat Inventory
+
+    - name: ansible ping inventory
+      run: ansible hello -m ping
