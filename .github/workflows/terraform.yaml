@@ -101,5 +101,11 @@ jobs:
         pwd
         cat Inventory
 
+    - name: copy inventory file to Ansible directory
+      run: |
+        cp Inventory Ansible/Inventory
+
     - name: ansible ping inventory
-      run: ansible hello -m ping
+      run: |
+        cd Ansible
+        ansible hello -m ping
