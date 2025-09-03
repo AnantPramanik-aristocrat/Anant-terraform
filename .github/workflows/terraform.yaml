@@ -111,4 +111,5 @@ jobs:
         pwd
         ls -a
         cat Inventory
+        cat ansible.cfg
         ansible hello -m ping
