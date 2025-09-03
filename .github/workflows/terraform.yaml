@@ -57,6 +57,7 @@ jobs:
         cd ./ec2
         ls -a
         terraform apply -auto-approve
+        cat ./Ansible/Inventory
 
     - name: terraform destroy
       run: |
