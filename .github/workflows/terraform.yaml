@@ -103,7 +103,7 @@ jobs:
 
     - name: copy inventory file to Ansible directory
       run: |
-        cp Inventory Ansible/Inventory
+        cp Inventory Ansible/
 
     - name: ansible ping inventory
       run: |
