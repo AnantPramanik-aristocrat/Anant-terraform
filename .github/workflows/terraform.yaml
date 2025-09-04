@@ -5,6 +5,8 @@ name: Anant terraform workflow
 on: 
   push:
     branches: [ "main" ]  
+    paths-ignore:
+      - "README.md"
 # jobs what actions we are looking for 
 jobs:
   infra-build:
@@ -74,7 +76,10 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ansible-artifact
-        path: Ansible/Inventory
+        path: |
+          Ansible/Inventory
+          ec2/anant-privateKey.pem
+          ansible
 
   infra-ConfigDeploy:
     runs-on: ubuntu-latest 
